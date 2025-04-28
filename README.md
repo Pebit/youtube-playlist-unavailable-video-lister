@@ -31,7 +31,7 @@ the script will output the following:
 At the end, it also summarizes how many videos were missing out of the total.  
 example: "missing videos: 7/54"
 ## 🛠️ How To Use
-1. Export the playlist's HTML before showing unavailable videos (on the playlist page: right-click → InspectElement → copy the entire _<body>_ → paste into _public_html.in_).
+1. Export the playlist's HTML before showing unavailable videos (on the playlist page: right-click → InspectElement → copy the entire _"<body>"_ → paste into _public_html.in_).
 ![image](https://github.com/user-attachments/assets/dd2d9136-7958-4c37-bd1f-0199c9e3f11a)
 ![image](https://github.com/user-attachments/assets/9b9cc1a3-2db5-49a4-a493-39b6a1738d5e)
 

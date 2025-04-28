@@ -21,10 +21,10 @@ This script:
 Here's an example: the 4th video in the playlist is unavailable
 ![image](https://github.com/user-attachments/assets/afe59608-e319-4004-97b2-981b32f167b3)
 the script will output the following:  
-4."bad"  
-https://www.youtube.com/watch?v=B7RTFjbg_7k  
-wave to earth  
-https://www.youtube.com/channel/UCBJNpcJaUcVyw4LlqGRMpcQ  
+> 4."bad"  
+> https://www.youtube.com/watch?v=B7RTFjbg_7k  
+> wave to earth  
+> https://www.youtube.com/channel/UCBJNpcJaUcVyw4LlqGRMpcQ  
   
   
   
@@ -58,8 +58,8 @@ example: "missing videos: 7/54"
   https://www.python.org/downloads/
 
 9. There may be videos that appear like the following (or similar):  
-  37."[Deleted video]"  
-  https://www.youtube.com/watch?v=8RSvUTG4Jfc  
+> 37."[Deleted video]"  
+> https://www.youtube.com/watch?v=8RSvUTG4Jfc  
   
   To recover these, paste the url given on the site [Wayback Machine](https://web.archive.org).  
   This site stores older versions of urls and most somewhat popular videos are stored here!  

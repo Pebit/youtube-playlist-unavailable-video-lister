@@ -78,9 +78,9 @@ example: "missing videos: 7/54"
   If the video isn't up, there's a high chance you'll at least find the title and possibly a thumbnail.  
 
 ## 📂 Files
--_ main.py _— The main script.  
--_ public_html.in _— HTML content of the playlist before showing unavailable videos.  
--_ all_html.in _— HTML content of the playlist after showing unavailable videos.  
+- main.py — The main script.  
+- public_html.in — HTML content of the playlist before showing unavailable videos.  
+- all_html.in — HTML content of the playlist after showing unavailable videos.  
 
 ##⚡ Notes
 - The script assumes **UTF-8 encoding** for input files.

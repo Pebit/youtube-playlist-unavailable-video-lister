@@ -57,7 +57,7 @@ example: "missing videos: 7/54"
   Here's the official page for python downloads where you can get the newest version:
   https://www.python.org/downloads/
 
-9. There may be videos that appear like the following (or similar):
+9. There may be videos that appear like the following (or similar):  
   37."[Deleted video]"  
   https://www.youtube.com/watch?v=8RSvUTG4Jfc  
   

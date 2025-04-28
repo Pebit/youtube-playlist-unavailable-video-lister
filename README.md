@@ -31,29 +31,29 @@ the script will output the following:
 At the end, it also summarizes how many videos were missing out of the total.  
 example: "missing videos: 7/54"
 ## 🛠️ How To Use
-1. Export the playlist's HTML before showing unavailable videos (on the playlist page: right-click → InspectElement → copy the entire _"<body>"_ → paste into _public_html.in_).
+1. Export the playlist's HTML before showing unavailable videos (on the playlist page: right-click → InspectElement → copy the entire _\<body\>_ → paste into _public_html.in_).
 ![image](https://github.com/user-attachments/assets/dd2d9136-7958-4c37-bd1f-0199c9e3f11a)
 ![image](https://github.com/user-attachments/assets/9b9cc1a3-2db5-49a4-a493-39b6a1738d5e)
 
 
 
-2. Toggle shown unavailable videos by hitting the three dots symbol next your playlist cover image and clicking  "Show unavailable videos"
+3. Toggle shown unavailable videos by hitting the three dots symbol next your playlist cover image and clicking  "Show unavailable videos"
 ![image](https://github.com/user-attachments/assets/3ec20d37-5023-442e-a5a2-151eafb260af)
    
-3. Export the playlist's HTML after showing unavailable videos (same method → paste into all_html.in).
+4. Export the playlist's HTML after showing unavailable videos (same method → paste into all_html.in).
 ![image](https://github.com/user-attachments/assets/12d7d874-c335-4fb5-8a52-00a4db6fa3d3)
 ![image](https://github.com/user-attachments/assets/329ae823-6a75-4ac8-ba9a-c9264f9745a8)
 
-4. Place both files (public_html.in, all_html.in) in the same directory as the script (if they are not already there for some reason).
+5. Place both files (public_html.in, all_html.in) in the same directory as the script (if they are not already there for some reason).
 ![image](https://github.com/user-attachments/assets/7c7e97c1-6c89-4a46-8058-d3536f6bf84f)
 
-5. Run the script: open a terminal in the same folder you have the script and type "python main.py"
+6. Run the script: open a terminal in the same folder you have the script and type "python main.py"
 ![image](https://github.com/user-attachments/assets/fef06154-dcf5-42e1-a16a-7629bb0b91a2)
 ![image](https://github.com/user-attachments/assets/7549b6f0-104b-4a08-89f8-71e320fb2d34)
 
-6. The script will print information about all unavailable videos directly in the console.
+7. The script will print information about all unavailable videos directly in the console.
 
-7. (optional) If it doesn't work you probably don't have python installed.  
+8. (optional) If it doesn't work you probably don't have python installed.  
   Here's the official page for python downloads where you can get the newest version:
   https://www.python.org/downloads/
 

@@ -1,6 +1,6 @@
 # YouTube Playlist - Unavailable Video Lister
 A simple Python script to **find and list unavailable videos** in a YouTube playlist by comparing its HTML before and after unavailable videos are revealed.  
-Want to skip the wall of text? Watch the video tutorial:  https://youtu.be/aC80fCiigCk?si=ftrKo5w2KRKkIVaa
+Want to skip the wall of text? Watch the video tutorial:  https://youtu.be/aC80fCiigCk?si=ftrKo5w2KRKkIVaa  
 MediaFire download: https://www.mediafire.com/file/5t66243lr5j0oql/youtube-playlist-unavailable-video-scraper.zip/file  
 ## 📜 What It Does
 Given:

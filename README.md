@@ -13,12 +13,12 @@ This script:
 - Sifts through both HTML files.
 - Compares the available vs. all videos.
 - Identifies missing/unavailable videos.
-- Outputs for each missing video in the following format:
-  -Position in the playlist
-  -Title (if available)
-  -Video link
-  -Channel name (if available)
-  -Channel link (if available)
+- Outputs for each missing video in the following format:  
+  -Position in the playlist  
+  -Title (if available)  
+  -Video link  
+  -Channel name (if available)  
+  -Channel link (if available)  
   
 Here's an example: the 4th video in the playlist is unavailable
 ![image](https://github.com/user-attachments/assets/afe59608-e319-4004-97b2-981b32f167b3)

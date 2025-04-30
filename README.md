@@ -23,7 +23,7 @@ This script:
 Here's an example: the 4th video in the playlist is unavailable
 ![image](https://github.com/user-attachments/assets/afe59608-e319-4004-97b2-981b32f167b3)
 the script will output the following:  
-```bash
+```
 4."bad"  
 https://www.youtube.com/watch?v=B7RTFjbg_7k  
 wave to earth  
@@ -73,7 +73,7 @@ example: "missing videos: 7/54"
 
   
 9. There may be videos that appear like the following (or similar):  
-```bash
+```
 37."[Deleted video]"  
 https://www.youtube.com/watch?v=8RSvUTG4Jfc  
 ```

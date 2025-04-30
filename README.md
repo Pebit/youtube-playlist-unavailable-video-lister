@@ -88,7 +88,7 @@ https://www.youtube.com/watch?v=8RSvUTG4Jfc
 - public_html.in — HTML content of the playlist before showing unavailable videos.  
 - all_html.in — HTML content of the playlist after showing unavailable videos.  
 
-##⚡ Notes
+## ⚡ Notes
 - The script assumes **UTF-8 encoding** for input files.
 - It handles a rare YouTube glitch that happens to me once where multiple identical entries for a song may appear.
 - This is a **manual comparison tool**; it does not directly fetch playlist data from YouTube servers.

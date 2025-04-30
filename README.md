@@ -23,11 +23,12 @@ This script:
 Here's an example: the 4th video in the playlist is unavailable
 ![image](https://github.com/user-attachments/assets/afe59608-e319-4004-97b2-981b32f167b3)
 the script will output the following:  
-> 4."bad"  
-> https://www.youtube.com/watch?v=B7RTFjbg_7k  
-> wave to earth  
-> https://www.youtube.com/channel/UCBJNpcJaUcVyw4LlqGRMpcQ  
-  
+```bash
+4."bad"  
+https://www.youtube.com/watch?v=B7RTFjbg_7k  
+wave to earth  
+https://www.youtube.com/channel/UCBJNpcJaUcVyw4LlqGRMpcQ  
+```
   
   
 At the end, it also summarizes how many videos were missing out of the total.  

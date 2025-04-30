@@ -35,7 +35,7 @@ At the end, it also summarizes how many videos were missing out of the total.
 example: "missing videos: 7/54"
 ## 🛠️ How To Use
 ### 1. Export the playlist's HTML before showing unavailable videos (on the playlist page: right-click → InspectElement → copy the entire _\<body\>_ → paste into _public_html.in_).
-<img src="https://github.com/user-attachments/assets/dd2d9136-7958-4c37-bd1f-0199c9e3f11a" width="75%" />
+<img src="https://github.com/user-attachments/assets/dd2d9136-7958-4c37-bd1f-0199c9e3f11a" width="75%" allign: center/>
 <img src="https://github.com/user-attachments/assets/329ae823-6a75-4ac8-ba9a-c9264f9745a8" width="75%" />
 
   

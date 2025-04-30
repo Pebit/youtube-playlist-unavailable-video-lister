@@ -73,9 +73,10 @@ example: "missing videos: 7/54"
 
   
 9. There may be videos that appear like the following (or similar):  
-> 37."[Deleted video]"  
-> https://www.youtube.com/watch?v=8RSvUTG4Jfc  
-  
+```bash
+37."[Deleted video]"  
+https://www.youtube.com/watch?v=8RSvUTG4Jfc  
+```
   To recover these, paste the url given on the site [Wayback Machine](https://web.archive.org).  
   This site stores older versions of urls and most somewhat popular videos are stored here!  
   If the video isn't up, there's a high chance you'll at least find the title and possibly a thumbnail.  

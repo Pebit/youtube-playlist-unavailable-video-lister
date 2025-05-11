@@ -62,7 +62,7 @@ shortly after the browser is automatically closed by the program, a list of all 
 <img src="https://github.com/user-attachments/assets/e774719b-4ed0-4311-909b-5ad681bc1617" width="75%" />
 
   
-### 5. paste the list wherever it's easier for you to read and follow (ex: on a private discord chat)
+### 5. paste the list wherever it's easier for you to read (ex: on a private discord chat)
 <img src="https://github.com/user-attachments/assets/59d08140-89f0-40ec-af37-702ecde57030" width="75%" />
 
 

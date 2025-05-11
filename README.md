@@ -68,7 +68,7 @@ shortly after the browser is automatically closed by the program, a list of all 
 
   
 ### 7. (optional) For the scheptics who don't trust the exe I already built, you can build your own exe file from the source code "youtube_unavailable_scraper.py" by following these steps:
-  
+## (optional) How to create the .exe
 
 
   

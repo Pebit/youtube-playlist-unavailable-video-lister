@@ -2,7 +2,7 @@
 A simple Python script to **find and list unavailable videos** in a YouTube playlist by comparing its HTML before and after unavailable videos are revealed.  
 Want to skip the wall of text? Watch the video tutorial:  https://youtu.be/aC80fCiigCk?si=ftrKo5w2KRKkIVaa  
 MediaFire download: https://www.mediafire.com/file/5t66243lr5j0oql/youtube-playlist-unavailable-video-scraper.zip/file  
-## 📜 What It Does
+## What It Does
 Given:
 - The public HTML of a YouTube playlist (before unavailable videos are shown)
   
@@ -33,7 +33,7 @@ https://www.youtube.com/channel/UCBJNpcJaUcVyw4LlqGRMpcQ
   
 At the end, it also summarizes how many videos were missing out of the total.  
 example: "missing videos: 7/54"
-## 🛠️ How To Use
+## How To Use
 ### 1. Export the playlist's HTML before showing unavailable videos (on the playlist page: right-click → InspectElement → copy the entire _\<body\>_ → paste into _public_html.in_).
 <img src="https://github.com/user-attachments/assets/dd2d9136-7958-4c37-bd1f-0199c9e3f11a" width="75%" />
 <img src="https://github.com/user-attachments/assets/329ae823-6a75-4ac8-ba9a-c9264f9745a8" width="75%" />
@@ -83,12 +83,12 @@ https://www.youtube.com/watch?v=8RSvUTG4Jfc
   This site stores older versions of urls and most somewhat popular videos are stored here!  
   If the video isn't up, there's a high chance you'll at least find the title and possibly a thumbnail.  
 
-## 📂 Files
+## Files
 - main.py — The main script.  
 - public_html.in — HTML content of the playlist before showing unavailable videos.  
 - all_html.in — HTML content of the playlist after showing unavailable videos.  
 
-## ⚡ Notes
+## Notes
 - The script assumes **UTF-8 encoding** for input files.
 - It handles a rare YouTube glitch that happens to me once where multiple identical entries for a song may appear.
 - This is a **manual comparison tool**; it does not directly fetch playlist data from YouTube servers.

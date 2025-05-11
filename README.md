@@ -1,7 +1,7 @@
 # YouTube Playlist - Unavailable Video Lister
 A simple Python script to **find and list unavailable videos** in a YouTube playlist by comparing its HTML before and after unavailable videos are revealed.  
 Want to skip the wall of text? Watch the video tutorial:  https://youtu.be/aC80fCiigCk?si=ftrKo5w2KRKkIVaa  
-MediaFire download: https://www.mediafire.com/file/5t66243lr5j0oql/youtube-playlist-unavailable-video-scraper.zip/file  
+MediaFire download: https://www.mediafire.com/file/n5z9hcrpl1sxfdq/youtube-playlist-unavailable-video-lister.zip/file
 ## What It Does
 Given:
 - The public HTML of a YouTube playlist (before unavailable videos are shown)
@@ -34,43 +34,41 @@ https://www.youtube.com/channel/UCBJNpcJaUcVyw4LlqGRMpcQ
 At the end, it also summarizes how many videos were missing out of the total.  
 example: "missing videos: 7/54"
 ## How To Use
-### 1. Export the playlist's HTML before showing unavailable videos (on the playlist page: right-click → InspectElement → copy the entire _\<body\>_ → paste into _public_html.in_).
-<img src="https://github.com/user-attachments/assets/dd2d9136-7958-4c37-bd1f-0199c9e3f11a" width="75%" />
-<img src="https://github.com/user-attachments/assets/329ae823-6a75-4ac8-ba9a-c9264f9745a8" width="75%" />
+### 1. Run the "youtube_unavailable_scraper.exe". These windows should appear on the screen:
+<img src="https://github.com/user-attachments/assets/5a0818e7-a4a3-43ce-aff8-12e444a58e50" width="75%" />
 
   
   
-  
-### 2. Toggle shown unavailable videos by hitting the three dots symbol next your playlist cover image and clicking  "Show unavailable videos"
-<img src="https://github.com/user-attachments/assets/3ec20d37-5023-442e-a5a2-151eafb260af" width="75%" />
+### 2. Inside the field at the top paste your playlist url, and then press the button on the right side of the field:
+<img src="https://github.com/user-attachments/assets/6a08d55b-c3f7-4e53-b064-afe4ba01e44c" width="75%" />
+
 
 
 
    
-### 3. Export the playlist's HTML after showing unavailable videos (same method → paste into all_html.in).
+### 3. Don't click anything or scroll on the browser popup or the script might not work properly!  
+Things you can still do to the browser window:
+- resize the window
+- move the window
+- open other windows on top of the running program
+- **unsure:** minimize the window (_might affect the program but all previous tests have given the correct output_)
+<img src="https://github.com/user-attachments/assets/b15cd853-115d-4348-bb4b-66134684f9d0" width="75%" />
 
-<img src="https://github.com/user-attachments/assets/12d7d874-c335-4fb5-8a52-00a4db6fa3d3" width="75%" />
-<img src="https://github.com/user-attachments/assets/9b9cc1a3-2db5-49a4-a493-39b6a1738d5e" width="75%" />
-
-
-  
-### 4. Place both files (public_html.in, all_html.in) in the same directory as the script (if they are not already there for some reason).
-<img src="https://github.com/user-attachments/assets/7c7e97c1-6c89-4a46-8058-d3536f6bf84f" width="75%" />
-
-  
-### 5. Run the script: open a terminal in the same folder you have the script and type "python main.py"
-<img src="https://github.com/user-attachments/assets/fef06154-dcf5-42e1-a16a-7629bb0b91a2" width="75%" />
-<img src="https://github.com/user-attachments/assets/7549b6f0-104b-4a08-89f8-71e320fb2d34" width="75%" />
 
 
   
-### 6. The script will print information about all unavailable videos directly in the console.
+### 4. Profit
+shortly after the browser is automatically closed by the program, a list of all unavailable videos will be printed on the "Unavailable Video Links" field that you can copy by pressing the button underneeth it
+<img src="https://github.com/user-attachments/assets/e774719b-4ed0-4311-909b-5ad681bc1617" width="75%" />
+
+  
+### 5. paste the list wherever it's easier for you to read and follow (ex: on a private discord chat)
+<img src="https://github.com/user-attachments/assets/59d08140-89f0-40ec-af37-702ecde57030" width="75%" />
 
 
   
-### 7. (optional) If it doesn't work you probably don't have python installed.  
-  Here's the official page for python downloads where you can get the newest version:
-  https://www.python.org/downloads/
+### 7. (optional) For the scheptics who don't trust the exe I already built, you can build your own exe file from the source code "youtube_unavailable_scraper.py" by following these steps:
+  
 
 
   

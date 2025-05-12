@@ -84,10 +84,11 @@ https://www.youtube.com/watch?v=8RSvUTG4Jfc
   If the video isn't up, there's a high chance you'll at least find the title and possibly a thumbnail.  
 
 ## Thanks for visiting my app and have fun restoring your playlists!
-If any bugs are found feel free to message me 
-Discord: "pebitandreiutz" (I will respond in like a day)
-Emai: "andrei.vio.ionescu@gmail.com" (I will respond 1 month later)
+If any bugs are found feel free to message me  
+Discord: "pebitandreiutz" (I will respond in like a day)  
+Emai: "andrei.vio.ionescu@gmail.com" (I will respond 1 month later)  
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 ## (optional) How to create the .exe  ( warning: kinda hard, eta: 15-20mins )
 For the scheptics who don't trust the exe I already built, you can build your own exe file from the source code "youtube_unavailable_scraper.py" by following these steps :
 ### 1. Open PowerShell Terminal inside the folder containing the .py file

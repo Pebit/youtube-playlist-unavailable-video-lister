@@ -81,7 +81,7 @@ For the scheptics who don't trust the exe I already built, you can build your ow
 pip install playwright
 pip install pyinstaller
 ```
-### 2. Now on the PowerShell Terminal inside the folder containing the .py file you'll want to create the executable with pyinstaller. 
+### 2. Now on the same Terminal you'll want to create the executable with pyinstaller. 
 
 For that you'll need to add the data about the browser that playwright will use and the binaries for playwright.
 

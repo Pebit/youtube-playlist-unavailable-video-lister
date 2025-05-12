@@ -78,19 +78,26 @@ pip install pyinstaller
 
 For that you'll need to add the data about the browser that playwright will use and the binaries for playwright.
 
-To find the binaries locate the python package "playwright" on your pc. 
+2.1 To find the binaries locate the python package "playwright" on your pc. 
 Usually it's somewhere like:
+```
 C:\users\YOURUSERNAME\appdata\local\programs\python\python311\lib\site-packages\playwright
-from there navigate to driver\package\bin
+```
+from there navigate to driver\package\bin, so your final path should look like:
+```
+C:\users\YOURUSERNAME\appdata\local\programs\python\python311\lib\site-packages\playwright\driver\package\bin
+```
 If you can't find it, literally ask ChatGPT how to find it
 
-The browser is already in the directory (if you cloned the github repo right)
+2.2 The browser is already in the directory with the .py file (if you cloned the github repo right)
+```
 "(...)\youtube-playlist-unavailable-video-lister\browsers\chromium-1169;browsers\chromium-1169"
+```
 
-
--- replace the paths in this command with yours:
+2.3 replace the paths in this command with yours:
+```Bash
 pyinstaller --onefile --add-data "(...)\youtube-playlist-unavailable-video-lister\browsers\chromium-1169;browsers\chromium-1169" --add-data "(...)\playwright\driver\package\bin;playwright\driver\package\bin" ".\youtube_unavailable_scraper.py"
-
+```
 example, this is how it looks for me:
 pyinstaller --onefile --add-data "C:\CodingProjects\youtube-playlist-unavailable-video-lister\browsers\chromium-1169;browsers\chromium-1169" --add-data "C:\Users\Andrei\AppData\Local\Programs\Python\Python311\Lib\site-packages\playwright\driver\package\bin;playwright\driver\package\bin" ".\youtube_unavailable_scraper.py"
 

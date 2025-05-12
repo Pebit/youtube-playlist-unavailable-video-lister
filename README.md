@@ -98,16 +98,21 @@ If you can't find it, literally ask ChatGPT how to find it
 ```Bash
 pyinstaller --onefile --add-data "(...)\youtube-playlist-unavailable-video-lister\browsers\chromium-1169;browsers\chromium-1169" --add-data "(...)\playwright\driver\package\bin;playwright\driver\package\bin" ".\youtube_unavailable_scraper.py"
 ```
-example, this is how it looks for me:
+for example, this is how it looks for me:
+```Bash
 pyinstaller --onefile --add-data "C:\CodingProjects\youtube-playlist-unavailable-video-lister\browsers\chromium-1169;browsers\chromium-1169" --add-data "C:\Users\Andrei\AppData\Local\Programs\Python\Python311\Lib\site-packages\playwright\driver\package\bin;playwright\driver\package\bin" ".\youtube_unavailable_scraper.py"
+```
 
-At the moment of posting (11th of May 2025) the tool uses the latest version of chromium that works with the playwright libraries but a future version of playwright might not be compatible with the browser I have already saved under /browsers in the folder.
+### 3. At the moment of posting (11th of May 2025) the tool uses the latest version of chromium that works with the playwright libraries but a future version of playwright might not be compatible with the browser I have already saved under /browsers in the folder.
 If I haven't updated the browser directory to work for the current version of playwright, install the most recent working chromium ver using:
-
+```Bash
 playwright install chromium
+```
+then locate the browser   
+should be a folder in  
+C:\Users\YOURUSER\AppData\Local\ms-playwright  
+under the name "chromium-XXXX".  
 
-then locate the browser 
-should be a folder in C:\Users\YOURUSER\AppData\Local\ms-playwright under the name chromium-XXXX.
 copy that folder and replace the folder in the ./browsers directory with that one
 
 now you're good to go and can run the pyinstaller command again to make the .exe file:

@@ -33,10 +33,12 @@ https://www.youtube.com/channel/UCBJNpcJaUcVyw4LlqGRMpcQ
   
   
 At the end, it also summarizes how many videos were missing out of the total.  
-example:
+example:  
+
 ```
 missing videos: 7/54  
 ```
+
 ## How To Use
 ### 1. Run the "youtube_unavailable_scraper.exe". These windows should appear on the screen:
 <img src="https://github.com/user-attachments/assets/5a0818e7-a4a3-43ce-aff8-12e444a58e50" width="75%" />
@@ -70,10 +72,12 @@ shortly after the browser is automatically closed by the program, a list of all 
 <img src="https://github.com/user-attachments/assets/59d08140-89f0-40ec-af37-702ecde57030" width="75%" />
 <br><br>
 ### 6. There may be videos that appear like the following (or similar):  
+
 ```
 37."[Deleted video]"  
 https://www.youtube.com/watch?v=8RSvUTG4Jfc  
 ```
+
   To recover these, paste the url given on the site [Wayback Machine](https://web.archive.org).  
   This site stores older versions of urls and most somewhat popular videos are stored here!  
   If the video isn't up, there's a high chance you'll at least find the title and possibly a thumbnail.  

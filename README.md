@@ -131,3 +131,6 @@ now you're good to go and can try running the pyinstaller command again to make 
 pyinstaller --onefile --add-data "(...)\youtube-playlist-unavailable-video-lister\browsers\chromium-XXXX;browsers\chromium-XXXX" --add-data "(...)\playwright\driver\package\bin;playwright\driver\package\bin" ".\youtube_unavailable_scraper.py"
 ```
 ## Thanks for visiting my app and have fun restoring your playlists!
+If any bugs are found feel free to message me 
+Discord: "pebitandreiutz" (I will respond in like a day)
+Emai: "andrei.vio.ionescu@gmail.com" (I will respond 1 month later)

@@ -97,11 +97,12 @@ C:\users\YOURUSERNAME\appdata\local\programs\python\python311\lib\site-packages\
 If you can't find it, literally ask ChatGPT how to find it
 
 2.2 The browser is already in the directory with the .py file (if you cloned the github repo right)
+You'll want to have a path like this for it ready:
 ```
 "(...)\youtube-playlist-unavailable-video-lister\browsers\chromium-1169;browsers\chromium-1169"
 ```
 
-2.3 replace the paths in this command with yours:
+2.3 Now that you have the two paths, replace them in this command:
 ```Bash
 pyinstaller --onefile --add-data "(...)\youtube-playlist-unavailable-video-lister\browsers\chromium-1169;browsers\chromium-1169" --add-data "(...)\playwright\driver\package\bin;playwright\driver\package\bin" ".\youtube_unavailable_scraper.py"
 ```
@@ -110,7 +111,7 @@ for example, this is how it looks for me:
 pyinstaller --onefile --add-data "C:\CodingProjects\youtube-playlist-unavailable-video-lister\browsers\chromium-1169;browsers\chromium-1169" --add-data "C:\Users\Andrei\AppData\Local\Programs\Python\Python311\Lib\site-packages\playwright\driver\package\bin;playwright\driver\package\bin" ".\youtube_unavailable_scraper.py"
 ```
 
-### 3. At the moment of posting (11th of May 2025) the tool uses the latest version of chromium that works with the playwright libraries but a future version of playwright might not be compatible with the browser I have already saved under /browsers in the folder.
+### 3. At the moment of posting (11th of May 2025) the tool uses the latest version of chromium that works with the playwright libraries... but a future version of playwright might not be compatible with the browser I have already saved under /browsers in the folder.
 If I haven't updated the browser directory to work for the current version of playwright, install the most recent working chromium ver using:
 ```Bash
 playwright install chromium
@@ -127,20 +128,8 @@ copy that folder and replace the folder in the ./browsers directory with that on
 
 now you're good to go and can try running the pyinstaller command again to make the .exe file:
 ```
-pyinstaller --onefile --add-data "(...)\youtube-playlist-unavailable-video-lister\browsers\chromium-XXXX;browsers\chromium-1169" --add-data "(...)\playwright\driver\package\bin;playwright\driver\package\bin" ".\youtube_unavailable_scraper.py"
+pyinstaller --onefile --add-data "(...)\youtube-playlist-unavailable-video-lister\browsers\chromium-XXXX;browsers\chromium-XXXX" --add-data "(...)\playwright\driver\package\bin;playwright\driver\package\bin" ".\youtube_unavailable_scraper.py"
 ```
-
-
-
-## Files
-- main.py — The main script.  
-- public_html.in — HTML content of the playlist before showing unavailable videos.  
-- all_html.in — HTML content of the playlist after showing unavailable videos.  
-
-## Notes
-- The script assumes **UTF-8 encoding** for input files.
-- It handles a rare YouTube glitch that happens to me once where multiple identical entries for a song may appear.
-- This is a **manual comparison tool**; it does not directly fetch playlist data from YouTube servers.
 
 
 

@@ -65,7 +65,14 @@ shortly after the browser is automatically closed by the program, a list of all 
 ### 5. paste the list wherever it's easier for you to read (ex: on a private discord chat)
 <img src="https://github.com/user-attachments/assets/59d08140-89f0-40ec-af37-702ecde57030" width="75%" />
 
-
+### 6. There may be videos that appear like the following (or similar):  
+```
+37."[Deleted video]"  
+https://www.youtube.com/watch?v=8RSvUTG4Jfc  
+```
+  To recover these, paste the url given on the site [Wayback Machine](https://web.archive.org).  
+  This site stores older versions of urls and most somewhat popular videos are stored here!  
+  If the video isn't up, there's a high chance you'll at least find the title and possibly a thumbnail.  
   
 ## (optional) How to create the .exe
 For the scheptics who don't trust the exe I already built, you can build your own exe file from the source code "youtube_unavailable_scraper.py" by following these steps:
@@ -116,18 +123,14 @@ C:\Users\YOURUSER\AppData\Local\ms-playwright
 under the name _"chromium-XXXX"_.  
 
 copy that folder and replace the folder in the ./browsers directory with that one
+<img src="https://github.com/user-attachments/assets/88335ab7-da99-4663-a19c-5d572084b065" width="75%" />
 
-now you're good to go and can run the pyinstaller command again to make the .exe file:
+now you're good to go and can try running the pyinstaller command again to make the .exe file:
+```
 pyinstaller --onefile --add-data "(...)\youtube-playlist-unavailable-video-lister\browsers\chromium-XXXX;browsers\chromium-1169" --add-data "(...)\playwright\driver\package\bin;playwright\driver\package\bin" ".\youtube_unavailable_scraper.py"
-  
-### 8. There may be videos that appear like the following (or similar):  
 ```
-37."[Deleted video]"  
-https://www.youtube.com/watch?v=8RSvUTG4Jfc  
-```
-  To recover these, paste the url given on the site [Wayback Machine](https://web.archive.org).  
-  This site stores older versions of urls and most somewhat popular videos are stored here!  
-  If the video isn't up, there's a high chance you'll at least find the title and possibly a thumbnail.  
+
+
 
 ## Files
 - main.py — The main script.  

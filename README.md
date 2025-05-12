@@ -86,7 +86,7 @@ https://www.youtube.com/watch?v=8RSvUTG4Jfc
 ## Thanks for visiting my app and have fun restoring your playlists!
 If any bugs are found feel free to message me  
 Discord: "pebitandreiutz" (I will respond in like a day)  
-Emai: "andrei.vio.ionescu@gmail.com" (I will respond 1 month later)  
+Emai: "andrei.vio.ionescu@gmail.com" (I will respond ~1 month later)  
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 ## (optional) How to create the .exe  ( warning: kinda hard, eta: 15-20mins )

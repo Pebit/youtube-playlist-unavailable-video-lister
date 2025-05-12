@@ -19,13 +19,19 @@ else:
 
 os.environ["PLAYWRIGHT_BROWSERS_PATH"] = browsers_dir
 
+
+def on_select(event):
+    extraWaitTime.set(int(waitTimeCombo.get()))
+
+
 def toggle_show_unavailable(page):
     # 1) find all the “More actions” buttons
     buttons = page.locator('button[aria-label="More actions"]')
     count = buttons.count()
     if count < 2:
         logTextWidget.config(state="normal")
-        logTextWidget.insert('end', "❌ Can't find the playlist 'More actions' button\n", "red_text")
+        logTextWidget.insert('end', "- Can't find the playlist 'More actions' button\n", "red_text")
+        logTextWidget.see(END)
         logTextWidget.config(state="disabled")
         return
 
@@ -38,6 +44,7 @@ def toggle_show_unavailable(page):
     more_btn.click()
     logTextWidget.config(state="normal")
     logTextWidget.insert('end', "✔ Clicked playlist 'More actions' button\n", "green_text")
+    logTextWidget.see(END)
     logTextWidget.config(state="disabled")
     # 4) click the “Show unavailable videos” item
     try:
@@ -46,10 +53,12 @@ def toggle_show_unavailable(page):
         item.click()
         logTextWidget.config(state="normal")
         logTextWidget.insert('end', "✔ Clicked 'Show unavailable videos'\n", "green_text")
+        logTextWidget.see(END)
         logTextWidget.config(state="disabled")
     except:
         logTextWidget.config(state="normal")
-        logTextWidget.insert('end', "❌ Can’t find the 'Show unavailable videos' button\n", "red_text")
+        logTextWidget.insert('end', "- Can’t find the 'Show unavailable videos' button\n", "red_text")
+        logTextWidget.see(END)
         logTextWidget.config(state="disabled")
     # Give YouTube a sec to update the list
     page.wait_for_timeout(1_000)
@@ -57,22 +66,34 @@ def toggle_show_unavailable(page):
 
 def scroll_to_bottom(page):
     previous_count = 0
-    time.sleep(1)
+    logTextWidget.config(state="normal")
+    logTextWidget.insert('end', f"waiting {1 + extraWaitTime.get()} "
+                                f"{'seconds...' if 1 + extraWaitTime.get() != 1 else 'second... '}", "yellow_text")
+    logTextWidget.see(END)
+    logTextWidget.config(state="disabled")
+    time.sleep(1 + extraWaitTime.get())
     current_count = page.locator('ytd-playlist-video-renderer').count()
     logTextWidget.config(state="normal")
     logTextWidget.insert('end', f"   [0] Loaded videos: {current_count}\n", "white_text")
+    logTextWidget.see(END)
     logTextWidget.config(state="disabled")
     for i in range(18):  # max scroll attempts (if it scrolls more than 18 times => playlist has 1800+ videos)
         page.mouse.wheel(0, 20000)  # scrolls like a bajillion lines to reach the bottom
-        time.sleep(3)  # waits for new videos to load
+        logTextWidget.config(state="normal")
+        logTextWidget.insert('end', f"waiting {3 + extraWaitTime.get()} seconds...", "yellow_text")
+        logTextWidget.see(END)
+        logTextWidget.config(state="disabled")
+        time.sleep(3 + extraWaitTime.get())
 
         current_count = page.locator('ytd-playlist-video-renderer').count()
         logTextWidget.config(state="normal")
         if current_count == previous_count:
-            logTextWidget.insert('end', f"all videos loaded —> exiting scroll loop\n", "yellow_text")
+            logTextWidget.insert('end', f"   [{i+1}] All videos loaded\n", "white_text")
+            logTextWidget.see(END)
             break
 
         logTextWidget.insert('end', f"   [{i + 1}] Loaded videos: {current_count}\n", "white_text")
+        logTextWidget.see(END)
         logTextWidget.config(state="disabled")
 
         previous_count = current_count
@@ -86,11 +107,12 @@ def accept_form(page):  # finds and clicks "Reject all" in the form asking to al
                 button.click(timeout=5000)
                 logTextWidget.config(state="normal")
                 logTextWidget.insert('end', "✔ Clicked \"Reject all\" to cookies popup\n", "green_text")
+                logTextWidget.see(END)
                 logTextWidget.config(state="disabled")
-                break
+                return True
             except:
                 pass
-
+    return False
 
 def writepagein(page, file):
     html = page.content()  # Copy and paste the page in public.html
@@ -100,19 +122,39 @@ def writepagein(page, file):
 
 def get_full_youtube_playlist_htmls(playlist_url):
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)  # set to False to see in real time what the script does
-        context = browser.new_context()
-        page = context.new_page()
-        page.goto(playlist_url)
+        try:
+            browser = p.chromium.launch(headless=False)  # set to False to see in real time what the script does
+            context = browser.new_context()
+            page = context.new_page()
+            page.goto(playlist_url)
+        except:
+            logTextWidget.config(state="normal")
+            logTextWidget.insert('end', f"- Possible timeout-error while loading the page\n", "red_text")
+            logTextWidget.insert('end', f"continuing anyway...\n\n", "yellow_text")
+            logTextWidget.see(END)
+            logTextWidget.config(state="disabled")
+        logTextWidget.config(state="normal")
+        logTextWidget.insert('end', f"waiting {extraWaitTime.get() if extraWaitTime.get() > -1 else 0} "
+                                    f"{'seconds' if extraWaitTime.get() != 1 else 'second '} for form to load...\n",
+                             "yellow_text")
+        logTextWidget.see(END)
+        logTextWidget.config(state="disabled")
 
+        time.sleep(extraWaitTime.get() if extraWaitTime.get() > -1 else 0)
         # Accept cookie banner if it appears
-        accept_form(page)
+        if not accept_form(page):
+            logTextWidget.config(state="normal")
+            logTextWidget.insert('end', f"- Form not found\n",
+                                 "red_text")
+            logTextWidget.config(state="disabled")
 
         # Wait for page to load after accepting form
         logTextWidget.config(state="normal")
-        logTextWidget.insert('end', "waiting 7 seconds for page to load...\n", "yellow_text")
+        logTextWidget.insert('end', f"waiting {5 + extraWaitTime.get()} seconds for page to load...\n", "yellow_text")
+        logTextWidget.see(END)
         logTextWidget.config(state="disabled")
-        time.sleep(7)
+
+        time.sleep(7 + extraWaitTime.get())
 
         # Load all videos in the playlist
         scroll_to_bottom(page)
@@ -126,7 +168,7 @@ def get_full_youtube_playlist_htmls(playlist_url):
 
 
 def is_youtube_playlist_url(url):
-    return bool(re.search(r"youtube\.com/playlist\?list=", url))
+    return bool(re.search(r"youtube\.com/playlist\?list=", url)) and (url.find("youtube") == 0 or url.find("https") == 0)
 
 
 def script():
@@ -147,7 +189,8 @@ def script():
         get_full_youtube_playlist_htmls(URL)
     except:
         logTextWidget.config(state="normal")
-        logTextWidget.insert('end', "❌ Something went wrong with the browser popup\n", "red_text")
+        logTextWidget.insert('end', "\n❌ Something went wrong with the browser popup\n", "red_text")
+        logTextWidget.see(END)
         logTextWidget.config(state="disabled")
         scriptState.config(text=f"program stopped", fg=FG_LOG_ERROR)
         html_recovered = False
@@ -163,13 +206,15 @@ def script():
         list_of_all_songs = []
         # finds the playlist title
         lines = iter(f_public)
-        playlist_title = ""
+        playlist_title = None
         for line in lines:
             if PLAYLIST_TITLE in line:
                 clean_line = line.strip()
                 start_index = clean_line.find(PLAYLIST_TITLE) + len(PLAYLIST_TITLE)
-                end_index = clean_line.find(" -", start_index)
+                end_index = clean_line.find(" - YouTube", start_index)
                 playlist_title = clean_line[start_index:end_index]
+                if len(playlist_title) > 150:
+                    playlist_title = None
                 break
         # filters public songs from playlist_public.html (site code)
         f_public = open("playlist_public.html", 'r', encoding='utf-8')
@@ -238,12 +283,13 @@ def script():
         # list_of_all_songs = temp
 
         textWidget.config(state='normal')
-        try:
-            textWidget.insert('end', f"[PLAYLIST] \"{playlist_title}\"\n\n", "white_text")
-        except:
-            textWidget.insert('end', "[PLAYLIST] <Error: couldn't fetch playlist title>\n", "yellow_text")
+        textWidget.insert('end', f"[PLAYLIST] ", "yellow_text")
+        if playlist_title is not None:
+            textWidget.insert('end', f"\"{playlist_title}\"\n\n", "white_text")
+        else:
+            textWidget.insert('end', "<error: couldn't fetch playlist title>\n\n", "orange_text")
         if list_of_all_songs != list_of_public_songs:
-            textWidget.insert('end', "[UNAVAILABLE VIDEOS]\n\n", "white_text")
+            textWidget.insert('end', "[UNAVAILABLE VIDEOS]\n\n", "yellow_text")
 
         for song in list_of_all_songs:
             song_index += 1
@@ -256,8 +302,9 @@ def script():
         textWidget.insert('end', f"missing videos: {total_missing}/{song_index}\n")
         logTextWidget.config(state="normal")
         logTextWidget.insert('end', "✔ Program ended successfully\n", "green_text")
+        logTextWidget.see(END)
         logTextWidget.config(state="disabled")
-        textWidget.insert('end', "\n=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=\n\n")
+        textWidget.insert('end', "\n=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=\n\n", "white_text")
         scriptState.config(text=f"program finished!", fg="#93ffb2")
     else:
         logTextWidget.config(state="normal")
@@ -266,8 +313,10 @@ def script():
 
     logTextWidget.config(state="normal")
     logTextWidget.insert('end', "\n=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=\n\n", "white_text")
+    logTextWidget.see(END)
     logTextWidget.config(state="disabled")
     runScriptButton.config(state="normal")
+    textWidget.see(END)
     textWidget.config(state='disabled')
 
 
@@ -296,7 +345,9 @@ def copyOutput():
 BG_WINDOW = "#2b2d30"
 BG_WIDGET = "#1e1f22"
 FG_TEXT = "#ffffff"
-FG_TEXT_ERROR = "#ffe675"
+FG_TEXT_ERROR = "orange"
+FG_TEXT_YELLOW_HIGHLIGHT = "#fff582"
+FG_TEXT_GREEN_HIGHLIGHT = "#5caa72"
 FG_LINK = '#93b7ff'
 FG_LOG_THINKING = '#ffda58'
 FG_LOG_SUCCESS = '#74ff7a'
@@ -369,7 +420,8 @@ textWidget = Text(textFrame, wrap='word', height=10,
 textWidget.grid(row=0, column=0, sticky='nsew')
 textWidget.tag_configure("white_text", foreground=FG_TEXT)
 textWidget.tag_configure("blue_text", foreground=FG_LINK)
-textWidget.tag_configure("yellow_text", foreground=FG_TEXT_ERROR)
+textWidget.tag_configure("yellow_text", foreground=FG_TEXT_YELLOW_HIGHLIGHT)
+textWidget.tag_configure("orange_text", foreground=FG_TEXT_ERROR)
 
 scrollbar = ttk.Scrollbar(textFrame, orient='vertical', command=textWidget.yview)
 scrollbar.grid(row=0, column=1, sticky='ns')
@@ -403,5 +455,31 @@ copyButton.grid(row=3, column=0, sticky="w", pady=(10, 0))
 # Allow window to resize nicely
 root.grid_rowconfigure(2, weight=1)
 root.grid_columnconfigure((0, 1), weight=1)
+
+
+# === EXTRA TIME DROPDOWN FIELD ===
+
+wait_time_frame = Frame(root, bg=BG_WINDOW)
+wait_time_frame.grid(row=3, column=1, padx=10, pady=10, sticky="w")
+
+# Label
+WaitTimeLabel = Label(wait_time_frame, text="Videos not loading? Add extra wait time(seconds):", bg=BG_WINDOW, fg="white")
+WaitTimeLabel.pack(side="left", padx=(0, 10))
+
+numbers = list(str(x) for x in range(-1, 41))
+
+# Combobox
+waitTimeCombo = ttk.Combobox(wait_time_frame, values=numbers, style="Custom.TCombobox", state="readonly")
+waitTimeCombo.set(0)
+
+waitTimeCombo.pack(side="left")
+extraWaitTime = IntVar()
+extraWaitTime.set(int(waitTimeCombo.get()))
+
+waitTimeCombo.bind("<<ComboboxSelected>>", on_select)
+
+root.columnconfigure(0, weight=1)
+root.columnconfigure(1, weight=0)
+
 
 root.mainloop()

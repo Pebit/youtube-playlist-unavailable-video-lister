@@ -110,8 +110,10 @@ playwright install chromium
 ```
 then locate the browser   
 should be a folder in  
+```
 C:\Users\YOURUSER\AppData\Local\ms-playwright  
-under the name "chromium-XXXX".  
+```
+under the name _"chromium-XXXX"_.  
 
 copy that folder and replace the folder in the ./browsers directory with that one
 

@@ -31,8 +31,10 @@ https://www.youtube.com/channel/UCBJNpcJaUcVyw4LlqGRMpcQ
   
   
 At the end, it also summarizes how many videos were missing out of the total.  
-example: "missing videos: 7/54"  
-  
+example:
+```
+"missing videos: 7/54"  
+```
 ## How To Use
 ### 1. Run the "youtube_unavailable_scraper.exe". These windows should appear on the screen:
 <img src="https://github.com/user-attachments/assets/5a0818e7-a4a3-43ce-aff8-12e444a58e50" width="75%" />

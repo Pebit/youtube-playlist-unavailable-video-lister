@@ -2,6 +2,7 @@
 A tool written in Python to **find and list unavailable videos** in a YouTube playlist by comparing its HTML before and after unavailable videos are revealed.  
 Want to skip the wall of text? Watch the video tutorial:  (coming soon)  
 MediaFire download: https://www.mediafire.com/file/n5z9hcrpl1sxfdq/youtube-playlist-unavailable-video-lister.zip/file
+<br><br>
 ## What It Does
 Given:
 - The Playlist URL
@@ -18,7 +19,7 @@ This script:
   - Video link  
   - Channel name (if available)  
   - Channel link (if available)  
-  
+<br>
 Here's an example (the 4th video in the playlist is unavailable)
 ![image](https://github.com/user-attachments/assets/afe59608-e319-4004-97b2-981b32f167b3)
 the script will output the following:  
@@ -38,12 +39,12 @@ missing videos: 7/54
 ## How To Use
 ### 1. Run the "youtube_unavailable_scraper.exe". These windows should appear on the screen:
 <img src="https://github.com/user-attachments/assets/5a0818e7-a4a3-43ce-aff8-12e444a58e50" width="75%" />
-
+<br><br>
   
   
 ### 2. Inside the field at the top paste your playlist url, and then press the button on the right side of the field:
 <img src="https://github.com/user-attachments/assets/6a08d55b-c3f7-4e53-b064-afe4ba01e44c" width="75%" />
-
+<br><br>
 
 
 
@@ -55,18 +56,18 @@ Things you can still do to the browser window:
 - open other windows on top of the running program
 - **unsure:** minimize the window (_might affect the program but all previous tests have given the correct output_)
 <img src="https://github.com/user-attachments/assets/b15cd853-115d-4348-bb4b-66134684f9d0" width="75%" />
-
+<br><br>
 
 
   
 ### 4. Profit
 shortly after the browser is automatically closed by the program, a list of all unavailable videos will be printed on the "Unavailable Video Links" field that you can copy by pressing the button underneeth it
 <img src="https://github.com/user-attachments/assets/e774719b-4ed0-4311-909b-5ad681bc1617" width="75%" />
-
+<br><br>
   
 ### 5. paste the list wherever it's easier for you to read (ex: on a private discord chat)
 <img src="https://github.com/user-attachments/assets/59d08140-89f0-40ec-af37-702ecde57030" width="75%" />
-
+<br><br>
 ### 6. There may be videos that appear like the following (or similar):  
 ```
 37."[Deleted video]"  
@@ -80,7 +81,7 @@ https://www.youtube.com/watch?v=8RSvUTG4Jfc
 If any bugs are found feel free to message me 
 Discord: "pebitandreiutz" (I will respond in like a day)
 Emai: "andrei.vio.ionescu@gmail.com" (I will respond 1 month later)
-<br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 ## (optional) How to create the .exe  ( warning: kinda hard, eta: 15-20mins )
 For the scheptics who don't trust the exe I already built, you can build your own exe file from the source code "youtube_unavailable_scraper.py" by following these steps :
 ### 1. Open PowerShell Terminal inside the folder containing the .py file

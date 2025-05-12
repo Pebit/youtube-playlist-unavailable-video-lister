@@ -83,7 +83,7 @@ pip install pyinstaller
 ```
 ### 2. Now on the same Terminal you'll want to create the executable with pyinstaller. 
 
-For that you'll need to add the data about the browser that playwright will use and the binaries for playwright.
+For that you'll need to add the data about the browser that playwright will use and the binaries for playwright. (playwright is the python library managing interactions between program and browser)
 
 2.1 To find the binaries locate the python package "playwright" on your pc. 
 Usually it's somewhere like:

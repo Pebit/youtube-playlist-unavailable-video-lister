@@ -75,7 +75,12 @@ https://www.youtube.com/watch?v=8RSvUTG4Jfc
   To recover these, paste the url given on the site [Wayback Machine](https://web.archive.org).  
   This site stores older versions of urls and most somewhat popular videos are stored here!  
   If the video isn't up, there's a high chance you'll at least find the title and possibly a thumbnail.  
-  
+
+## Thanks for visiting my app and have fun restoring your playlists!
+If any bugs are found feel free to message me 
+Discord: "pebitandreiutz" (I will respond in like a day)
+Emai: "andrei.vio.ionescu@gmail.com" (I will respond 1 month later)
+
 ## (optional) How to create the .exe  ( warning: kinda hard, eta: 15-20mins )
 For the scheptics who don't trust the exe I already built, you can build your own exe file from the source code "youtube_unavailable_scraper.py" by following these steps :
 ### 1. Open PowerShell Terminal inside the folder containing the .py file
@@ -132,7 +137,3 @@ now you're good to go and can try running the pyinstaller command again to make 
 ```
 pyinstaller --onefile --add-data "(...)\youtube-playlist-unavailable-video-lister\browsers\chromium-XXXX;browsers\chromium-XXXX" --add-data "(...)\playwright\driver\package\bin;playwright\driver\package\bin" ".\youtube_unavailable_scraper.py"
 ```
-## Thanks for visiting my app and have fun restoring your playlists!
-If any bugs are found feel free to message me 
-Discord: "pebitandreiutz" (I will respond in like a day)
-Emai: "andrei.vio.ionescu@gmail.com" (I will respond 1 month later)

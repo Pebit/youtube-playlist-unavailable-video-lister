@@ -74,8 +74,8 @@ https://www.youtube.com/watch?v=8RSvUTG4Jfc
   This site stores older versions of urls and most somewhat popular videos are stored here!  
   If the video isn't up, there's a high chance you'll at least find the title and possibly a thumbnail.  
   
-## (optional) How to create the .exe
-For the scheptics who don't trust the exe I already built, you can build your own exe file from the source code "youtube_unavailable_scraper.py" by following these steps:
+## (optional) How to create the .exe  ( warning: kinda hard, eta: 15-20mins )
+For the scheptics who don't trust the exe I already built, you can build your own exe file from the source code "youtube_unavailable_scraper.py" by following these steps :
 ### 1. Open PowerShell Terminal inside the folder containing the .py file
 ```Bash
 pip install playwright

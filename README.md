@@ -1,16 +1,15 @@
 # YouTube Playlist - Unavailable Video Lister
-A simple Python script to **find and list unavailable videos** in a YouTube playlist by comparing its HTML before and after unavailable videos are revealed.  
-Want to skip the wall of text? Watch the video tutorial:  https://youtu.be/aC80fCiigCk?si=ftrKo5w2KRKkIVaa  
+A tool written in Python to **find and list unavailable videos** in a YouTube playlist by comparing its HTML before and after unavailable videos are revealed.  
+Want to skip the wall of text? Watch the video tutorial:  (coming soon)  
 MediaFire download: https://www.mediafire.com/file/n5z9hcrpl1sxfdq/youtube-playlist-unavailable-video-lister.zip/file
 ## What It Does
 Given:
-- The public HTML of a YouTube playlist (before unavailable videos are shown)
-  
-- The private HTML of the same playlist (after unavailable videos are shown)
+- The Playlist URL
+- (optional) number of seconds extra wait time (for slower internet connections) 
   
 This script:
   
-- Sifts through both HTML files.
+- Sifts through both HTML files of the page (one with and one without the unavailable videos).
 - Compares the available vs. all videos.
 - Identifies missing/unavailable videos.
 - Outputs for each missing video in the following format:  
@@ -20,7 +19,7 @@ This script:
   - Channel name (if available)  
   - Channel link (if available)  
   
-Here's an example: the 4th video in the playlist is unavailable
+Here's an example (the 4th video in the playlist is unavailable)
 ![image](https://github.com/user-attachments/assets/afe59608-e319-4004-97b2-981b32f167b3)
 the script will output the following:  
 ```
@@ -32,7 +31,8 @@ https://www.youtube.com/channel/UCBJNpcJaUcVyw4LlqGRMpcQ
   
   
 At the end, it also summarizes how many videos were missing out of the total.  
-example: "missing videos: 7/54"
+example: "missing videos: 7/54"  
+  
 ## How To Use
 ### 1. Run the "youtube_unavailable_scraper.exe". These windows should appear on the screen:
 <img src="https://github.com/user-attachments/assets/5a0818e7-a4a3-43ce-aff8-12e444a58e50" width="75%" />

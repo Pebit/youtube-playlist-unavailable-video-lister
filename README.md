@@ -71,6 +71,7 @@ shortly after the browser is automatically closed by the program, a list of all 
 ### 5. paste the list wherever it's easier for you to read (ex: on a private discord chat)
 <img src="https://github.com/user-attachments/assets/59d08140-89f0-40ec-af37-702ecde57030" width="75%" />
 <br><br>
+
 ### 6. There may be videos that appear like the following (or similar):  
 
 ```

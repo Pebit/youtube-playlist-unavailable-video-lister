@@ -67,10 +67,44 @@ shortly after the browser is automatically closed by the program, a list of all 
 
 
   
-### 7. (optional) For the scheptics who don't trust the exe I already built, you can build your own exe file from the source code "youtube_unavailable_scraper.py" by following these steps:
 ## (optional) How to create the .exe
+For the scheptics who don't trust the exe I already built, you can build your own exe file from the source code "youtube_unavailable_scraper.py" by following these steps:
+### 1. Open PowerShell Terminal inside the folder containing the .py file
+```Bash
+pip install playwright
+pip install pyinstaller
+```
+### 2. Now on the PowerShell Terminal inside the folder containing the .py file you'll want to create the executable with pyinstaller. 
+
+For that you'll need to add the data about the browser that playwright will use and the binaries for playwright.
+
+To find the binaries locate the python package "playwright" on your pc. 
+Usually it's somewhere like:
+C:\users\YOURUSERNAME\appdata\local\programs\python\python311\lib\site-packages\playwright
+from there navigate to driver\package\bin
+If you can't find it, literally ask ChatGPT how to find it
+
+The browser is already in the directory (if you cloned the github repo right)
+"(...)\youtube-playlist-unavailable-video-lister\browsers\chromium-1169;browsers\chromium-1169"
 
 
+-- replace the paths in this command with yours:
+pyinstaller --onefile --add-data "(...)\youtube-playlist-unavailable-video-lister\browsers\chromium-1169;browsers\chromium-1169" --add-data "(...)\playwright\driver\package\bin;playwright\driver\package\bin" ".\youtube_unavailable_scraper.py"
+
+example, this is how it looks for me:
+pyinstaller --onefile --add-data "C:\CodingProjects\youtube-playlist-unavailable-video-lister\browsers\chromium-1169;browsers\chromium-1169" --add-data "C:\Users\Andrei\AppData\Local\Programs\Python\Python311\Lib\site-packages\playwright\driver\package\bin;playwright\driver\package\bin" ".\youtube_unavailable_scraper.py"
+
+At the moment of posting (11th of May 2025) the tool uses the latest version of chromium that works with the playwright libraries but a future version of playwright might not be compatible with the browser I have already saved under /browsers in the folder.
+If I haven't updated the browser directory to work for the current version of playwright, install the most recent working chromium ver using:
+
+playwright install chromium
+
+then locate the browser 
+should be a folder in C:\Users\YOURUSER\AppData\Local\ms-playwright under the name chromium-XXXX.
+copy that folder and replace the folder in the ./browsers directory with that one
+
+now you're good to go and can run the pyinstaller command again to make the .exe file:
+pyinstaller --onefile --add-data "(...)\youtube-playlist-unavailable-video-lister\browsers\chromium-XXXX;browsers\chromium-1169" --add-data "(...)\playwright\driver\package\bin;playwright\driver\package\bin" ".\youtube_unavailable_scraper.py"
   
 ### 8. There may be videos that appear like the following (or similar):  
 ```

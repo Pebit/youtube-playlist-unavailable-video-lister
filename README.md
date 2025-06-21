@@ -59,7 +59,7 @@ Things you can still do to the browser window:
 - open other apps on top of the running program
 - **unsure:** minimize the window (_might affect the program: all previous tests have given weird logs but correct output_)
 <br>
-*TLDR: Don't mess with the browser window*
+TLDR: Don't mess with the browser window
 <img src="https://github.com/user-attachments/assets/b15cd853-115d-4348-bb4b-66134684f9d0" width="75%" />
 <br><br>
 
